@@ -1,4 +1,6 @@
 import "dotenv/config"
+import path from "path"
+import { fileURLToPath } from "url"
 import express from "express"
 import cors from "cors"
 import helmet from "helmet"
@@ -8,6 +10,9 @@ import menuRoutes from "./routes/menuRoutes.js"
 import orderRoutes from "./routes/orderRoutes.js"
 import contactRoutes from "./routes/contactRoutes.js"
 import { notFound, errorHandler } from "./middleware/errorHandler.js"
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const app = express()
 const PORT = process.env.PORT || 5000
@@ -54,6 +59,15 @@ app.get("/api", (req, res) => {
       subscribe: "POST /api/contact/subscribe",
     },
   })
+})
+
+const clientDistPath = path.resolve(__dirname, "..", "client", "dist")
+app.use(express.static(clientDistPath))
+
+app.get("/favicon.ico", (req, res) => res.status(204).end())
+
+app.get(/^\/(?!api\/).*/, (req, res) => {
+  res.sendFile(path.join(clientDistPath, "index.html"))
 })
 
 app.use(notFound)
