@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah Johnson",
+    "role": "Food Blogger",
+    "avatar": "SJ",
+    "rating": 5,
+    "text": "The delivery was lightning fast and the food arrived piping hot! The butter chicken is absolutely divine — tastes just like homemade."
+  },
+  {
+    "id": 2,
+    "name": "Michael Chen",
+    "role": "Regular Customer",
+    "avatar": "MC",
+    "rating": 5,
+    "text": "I've been ordering from FlavorDash for months now. Their sushi selection is incredible and always fresh. Highly recommend the Dragon Roll!"
+  },
+  {
+    "id": 3,
+    "name": "Emma Williams",
+    "role": "Fitness Coach",
+    "avatar": "EW",
+    "rating": 4,
+    "text": "Love the healthy options! The Kale & Quinoa salad is my go-to post-workout meal. Great quality and perfect portions."
+  },
+  {
+    "id": 4,
+    "name": "David Rodriguez",
+    "role": "Food Critic",
+    "avatar": "DR",
+    "rating": 5,
+    "text": "Exceptional variety and consistent quality. The pasta dishes are restaurant-grade. FlavorDash has raised the bar for food delivery."
+  },
+  {
+    "id": 5,
+    "name": "Priya Sharma",
+    "role": "Chef",
+    "avatar": "PS",
+    "rating": 5,
+    "text": "As a chef, I'm picky about my food. FlavorDash never disappoints. The Biryani is aromatic and authentic — truly exceptional delivery service."
+  },
+  {
+    "id": 6,
+    "name": "James Thompson",
+    "role": "Busy Professional",
+    "avatar": "JT",
+    "rating": 4,
+    "text": "Perfect for my busy schedule. Ordering is super easy and the 30-minute delivery is a lifesaver. The app interface is slick too!"
+  }
+]

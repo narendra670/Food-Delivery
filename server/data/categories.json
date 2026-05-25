@@ -1,0 +1,10 @@
+[
+  { "id": "pizza", "name": "Pizza", "image": "menu_1.png" },
+  { "id": "burger", "name": "Burger", "image": "menu_2.png" },
+  { "id": "sushi", "name": "Sushi", "image": "menu_3.png" },
+  { "id": "pasta", "name": "Pasta", "image": "menu_4.png" },
+  { "id": "indian", "name": "Indian", "image": "menu_5.png" },
+  { "id": "desserts", "name": "Desserts", "image": "menu_6.png" },
+  { "id": "salads", "name": "Salads", "image": "menu_7.png" },
+  { "id": "beverages", "name": "Beverages", "image": "menu_8.png" }
+]
