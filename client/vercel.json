@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "https://food-delivery-9big.onrender.com/api/$1"
+        }
+    ]
+}
