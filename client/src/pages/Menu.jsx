@@ -165,7 +165,7 @@ export default function Menu() {
                     <h3 className="font-semibold text-gray-900 text-lg">{item.name}</h3>
                     <p className="text-gray-500 text-sm mt-1 line-clamp-2">{item.desc}</p>
                     <div className="flex items-center justify-between mt-4">
-                      <span className="text-xl font-bold text-primary-600">${item.price.toFixed(2)}</span>
+                      <span className="text-xl font-bold text-primary-600">₹{item.price}</span>
                       <Link to={`/order?item=${item.id}`}
                         className="bg-primary-50 text-primary-600 hover:bg-primary-500 hover:text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all">
                         Add to Order

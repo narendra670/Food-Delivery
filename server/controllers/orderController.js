@@ -14,7 +14,7 @@ export const createOrder = (req, res) => {
   }
 
   const subtotal = items.reduce((sum, item) => sum + item.price * item.qty, 0)
-  const deliveryFee = subtotal >= 30 ? 0 : 2.99
+  const deliveryFee = subtotal >= 999 ? 0 : 49
   const total = parseFloat((subtotal + deliveryFee).toFixed(2))
 
   const order = addOrder({

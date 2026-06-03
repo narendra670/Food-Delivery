@@ -58,7 +58,7 @@ export default function Order() {
 
   const cartItems = items.filter((i) => cart[i.id])
   const subtotal = cartItems.reduce((sum, i) => sum + i.price * (cart[i.id] || 0), 0)
-  const deliveryFee = subtotal >= 30 ? 0 : 2.99
+  const deliveryFee = subtotal >= 999 ? 0 : 49
   const total = parseFloat((subtotal + deliveryFee).toFixed(2))
 
   const handlePlaceOrder = async (e) => {
@@ -120,7 +120,7 @@ export default function Order() {
                       <p className="text-gray-500 text-xs line-clamp-1">{item.desc}</p>
                     </div>
                     <div className="flex items-center justify-between mt-2">
-                      <span className="font-bold text-primary-600 text-sm">${item.price.toFixed(2)}</span>
+                      <span className="font-bold text-primary-600 text-sm">₹{item.price}</span>
                       {cart[item.id] ? (
                         <div className="flex items-center gap-1">
                           <button onClick={() => updateQty(item.id, cart[item.id] - 1)}
@@ -165,10 +165,10 @@ export default function Order() {
                       <div key={item.id} className="flex items-center justify-between">
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-medium text-gray-900 truncate">{item.name}</p>
-                          <p className="text-xs text-gray-500">${item.price.toFixed(2)} x {cart[item.id]}</p>
+                          <p className="text-xs text-gray-500">₹{item.price} x {cart[item.id]}</p>
                         </div>
                         <div className="flex items-center gap-2 ml-2">
-                          <span className="text-sm font-semibold text-gray-900">${(item.price * cart[item.id]).toFixed(2)}</span>
+                          <span className="text-sm font-semibold text-gray-900">₹{item.price * cart[item.id]}</span>
                           <button onClick={() => updateQty(item.id, cart[item.id] - 1)}
                             className="text-gray-400 hover:text-red-500 transition-colors">
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -181,9 +181,9 @@ export default function Order() {
                   </div>
 
                   <div className="border-t border-gray-100 pt-4 space-y-2">
-                    <div className="flex justify-between text-sm"><span className="text-gray-600">Subtotal</span><span className="font-medium">${subtotal.toFixed(2)}</span></div>
-                    <div className="flex justify-between text-sm"><span className="text-gray-600">Delivery Fee</span><span className="font-medium">{deliveryFee === 0 ? <span className="text-accent-600 font-semibold">FREE</span> : `$${deliveryFee.toFixed(2)}`}</span></div>
-                    <div className="flex justify-between text-lg font-bold border-t border-gray-100 pt-2"><span>Total</span><span className="text-primary-600">${total.toFixed(2)}</span></div>
+                    <div className="flex justify-between text-sm"><span className="text-gray-600">Subtotal</span><span className="font-medium">₹{subtotal}</span></div>
+                    <div className="flex justify-between text-sm"><span className="text-gray-600">Delivery Fee</span><span className="font-medium">{deliveryFee === 0 ? <span className="text-accent-600 font-semibold">FREE</span> : `₹${deliveryFee}`}</span></div>
+                    <div className="flex justify-between text-lg font-bold border-t border-gray-100 pt-2"><span>Total</span><span className="text-primary-600">₹{total}</span></div>
                   </div>
 
                   <button onClick={() => setShowSummary(true)}
@@ -258,9 +258,9 @@ export default function Order() {
 
               <div className="border-t border-gray-100 pt-4 space-y-2">
                 <div className="flex justify-between text-sm"><span className="text-gray-600">Items</span><span className="font-medium">{cartItems.length}</span></div>
-                <div className="flex justify-between text-sm"><span className="text-gray-600">Subtotal</span><span className="font-medium">${subtotal.toFixed(2)}</span></div>
-                <div className="flex justify-between text-sm"><span className="text-gray-600">Delivery</span><span className="font-medium">{deliveryFee === 0 ? 'FREE' : `$${deliveryFee.toFixed(2)}`}</span></div>
-                <div className="flex justify-between text-xl font-bold border-t border-gray-100 pt-2"><span>Total</span><span className="text-primary-600">${total.toFixed(2)}</span></div>
+                <div className="flex justify-between text-sm"><span className="text-gray-600">Subtotal</span><span className="font-medium">₹{subtotal}</span></div>
+                <div className="flex justify-between text-sm"><span className="text-gray-600">Delivery</span><span className="font-medium">{deliveryFee === 0 ? 'FREE' : `₹${deliveryFee}`}</span></div>
+                <div className="flex justify-between text-xl font-bold border-t border-gray-100 pt-2"><span>Total</span><span className="text-primary-600">₹{total}</span></div>
               </div>
 
               <div className="flex gap-3 pt-2">
@@ -270,7 +270,7 @@ export default function Order() {
                 </button>
                 <button type="submit" disabled={submitting}
                   className="flex-1 btn-primary text-sm disabled:opacity-50">
-                  {submitting ? 'Placing Order...' : `Place Order • $${total.toFixed(2)}`}
+                  {submitting ? 'Placing Order...' : `Place Order • ₹${total}`}
                 </button>
               </div>
             </form>

@@ -226,7 +226,7 @@ export default function Home() {
                   <h3 className="font-semibold text-gray-900 text-lg">{item.name}</h3>
                   <p className="text-gray-500 text-sm mt-1.5 line-clamp-2 leading-relaxed">{item.desc}</p>
                   <div className="flex items-center justify-between mt-5 pt-4 border-t border-gray-100">
-                    <span className="text-2xl font-bold text-primary-600">${item.price.toFixed(2)}</span>
+                    <span className="text-2xl font-bold text-primary-600">₹{item.price}</span>
                     <Link to={`/order?item=${item.id}`}
                       className="bg-primary-500 text-white hover:bg-primary-600 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 active:scale-95">
                       + Add
